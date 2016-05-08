@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+	<title>HTML5擦玻璃效果 - 何问起</title>
+</head>
+<body style="margin: 0; padding: 0;">
+		<img class="blur" src="./img/m3.jpg" />
+		<img class="blur" src="./img/w3.jpg" />
+		<img class="noblur" src="./img/m3.jpg" />
+		<img class="noblur" src="./img/w3.jpg" />
+</body>
+</html>
+	<style>
+	.blur {
+		width:100%; 
+	    -webkit-filter: blur(30px); /* Chrome, Opera */
+	       -moz-filter: blur(10px);
+	        -ms-filter: blur(10px);    
+	            filter: blur(10px);    
+	}
+	.noblur {
+		width:100%; 
+	    -webkit-filter: blur(2px); /* Chrome, Opera */
+	       -moz-filter: blur(10px);
+	        -ms-filter: blur(10px);
+		}    
+	      
+	</style>

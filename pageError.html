@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<html>
+<head>
+	<style type="text/css">
+	@import "style/style.css";
+	</style>
+	<script src="lib/jquery-1.12.1.min.js"></script>	
+	<script type="text/javascript">
+	function angry() {
+		setTimeout(disp_alert.bind(this, 1),0);
+		setTimeout(disp_alert.bind(this, 2),200)
+		setTimeout(disp_alert.bind(this, 3),300)
+		$("button.action").hide();
+		$("p.conclusion").show();
+		$("button.next").show();
+	}
+
+	function disp_alert(ind) {
+		var pos = ind * 100;
+		window.open ("error.html", "page1" + ind, "height=200, width=200, top="+pos+", left="+pos+", toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function closeWindow(ind) {
+		window.close("page11");
+	}
+
+	</script>
+
+
+</head>
+
+
+
+<body>
+	<h1>SI28</h1>
+	<p>Projet : – SENTIMENTS INTERACTIFS ET MULTIMEDIAS</p>
+	<h1>Chapitre1</h1>
+	<p class="conclusion">Vous avez goûté le sentiment "COLÈRE"</p>
+	<button class="action" onclick="angry()">Apprendre</button>
+	<button class="action" onclick="closeWindow()">Close</button>
+	<button class="next" onclick="javasricpt: window.location.href='page2.html';" visibility>NEXT</button>
+</body>
+</html>
+
+

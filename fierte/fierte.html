@@ -1,0 +1,75 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<html>
+<head>
+	<script type="text/javascript" src="piano.js"></script>
+	<link rel="stylesheet" href="../style/style.css">
+
+	<script type="text/javascript">
+		var count = 0;
+		var code = '\
+#include <stdio.h>\n\
+int main() {\n\
+printf("Hello World!\n");\n\
+}\n\n'
+		var music = [1, 1, 5, 5, 6, 6, 5, 0,
+			4, 4, 3, 3, 2, 2, 1, 0,
+			5, 5, 4, 4, 3, 3, 2, 0,
+			5, 5, 4, 4, 3, 3, 2, 0,
+			1, 1, 5, 5, 6, 6, 5, 0,
+			4, 4, 3, 3, 2, 2, 1, 0, 0, 0
+		]
+
+		function writeCode(e) {
+			var codeText = document.getElementsByName("codeText")[0];
+			if (count + 1 > code.length) {
+				codeText.value += "Je peut programmer chouette!\n";
+			} else {
+				codeText.value += code[count];
+			}
+			var key = count % music.length;
+			switch (music[key]) {
+			case 1:
+				playSound(60);
+				break;
+			case 2:
+				playSound(62);
+				break;
+			case 3:
+				playSound(64);
+				break;
+			case 4:
+				playSound(65);
+				break;
+			case 5:
+				playSound(67);
+				break;
+			case 6:
+				playSound(69);
+				break;
+			case 7:
+				playSound(61);
+				break;
+			case 8:
+				playSound(72);
+				break;
+			default:
+			}
+			count++;
+			return false;
+		}
+		document.onkeydown = function(e) {}
+	</script>
+</head>
+	<title>SENTIMENTS INTERACTIFS ET MULTIMEDIAS</title>
+	<body>
+		<br />
+		<h1>CODING HELPER</h1>
+		<p>I am going to help you write your code like this:<p>		
+			<img src="img/coding.gif"  alt="coding" />
+			<br>
+			<br>
+			<textarea name="codeText" cols=100 rows=20 placeholder="try to write your code here :)" onkeydown="return writeCode(event)"/></textarea>
+		</body>
+		</html>
+
+
