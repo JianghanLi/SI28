@@ -1,0 +1,961 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="fr-FR" >
+    <head id="Head1"><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><title>
+	Le Bristol Paris | Reservations
+</title><script src="scripts/jquery.library.min.js"></script><script src="scripts/jquery.ui.min.js"></script><script src="scripts/jquery.cluetip.js"></script><script src="scripts/jquery.hoverIntent.js"></script><script src="scripts/jquery.plugins.extensions.js"></script>
+        <script src="scripts/json2.js"></script>
+        <link rel="stylesheet" type="text/css" href="/styles/themes/smoothness/jquery.ui.smoothness.css" >
+<link rel="stylesheet" type="text/css" href="/styles/themes/smoothness/jquery.ui.smoothness.Calendar.css" >
+<link rel="stylesheet" type="text/css" href="/Styles/Templates/100/FiveStar.css" media="screen" /> 
+        <!--[if lte IE 7]>                 
+            <link rel="stylesheet" type="text/css" href="styles/Templates/100/FiveStar_ie.css" media="screen" />    
+        <![endif]-->
+        <link href="/HOTEL/55749/SHELL/flex2.css" type="TEXT/CSS" rel="STYLESHEET" />
+
+<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+<link rel="icon" href="https://reservations.synxis.com/Hotel/55749/Images/Shell/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://reservations.synxis.com/Hotel/55749/Images/Shell/favicon.ico" type="image/x-icon">
+
+
+<script type="text/javascript" src="https://fast.fonts.net/jsapi/93b24ed7-b631-4fc1-b4ff-39e0ef744d8c.js"></script>
+
+<style>
+
+.top-bar {
+    background: none repeat scroll 0 0 #455660;
+    color: #FFFFFF;
+    font-family: 'Gill Sans MT', Century Gothic, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    height: 30px;
+    margin: 0px;
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: 5000;
+}
+
+.top-bar a, .top-bar a:hover {
+   color:#FFFFFF;
+   text-decoration:none;
+}
+
+.top-bar span {
+   color:#7A95A5;
+margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.wrapper {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    height: auto;
+    margin: 40px auto 0;
+    position: relative;
+    width: 980px;
+    z-index: 10;
+}
+
+.engineroom {
+	background: #FFF;
+	width: 940px;
+	margin: 0px auto;
+	padding: 5px;
+}
+
+.footer {
+    background: none repeat scroll 0 0 #F4F4F6;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    font-family: 'Gill Sans MT', Century Gothic, sans-serif;
+    height: 240px;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    padding-top: 10px;
+    width: 980px;
+    z-index: 20;
+}
+
+.dark-box {
+    background: none repeat scroll 0 0 #455660;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    height: 33px;
+    margin: 0 auto 40px;
+    width: 980px;
+}
+
+.helplink {
+  float: right;
+  text-align: right;
+  margin-right:20px;
+}
+
+.helplink a{
+  text-decoration: none;
+}
+
+.helplink a:hover{
+  text-decoration: underline;
+  color: #97c400;
+}
+
+.TitlewBkgLight, .ResConfirmNo,  .ResConfirmCancelNo, a.LinkButtonSt4  {
+       color: #FFFFFF !important;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+   border:1px solid #DDDDDD;
+}
+
+.CalwPrice .ui-datepicker td span.DayPrice {
+    font-size: 0.8em;
+}
+
+.CriteriaHelp {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #97c400;
+}
+
+.HotelDiv, .DatesDiv, .QuantitiesDiv, .CodesDiv {
+    max-width: 260px !important;
+}
+
+.right-content {
+    float: right;
+    font-family: Adobe Garamond W08;
+    font-size: 12px;
+    font-weight: normal;
+    padding-right: 20px;
+    padding-top: 4px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 5px;
+    line-height:30px;
+    color:#455560;
+}
+
+.right-content a, .right-content a:hover {
+   text-decoration: none;
+}
+
+/***** VIEW BY ROOM/RATES TABS *****/
+.SelectedTab {
+  color:#FFFFFF;
+  background-attachment:scroll !important;
+  background-color:#97c400 !important;
+  background-image:none !important;
+  background-position:0 0 !important;
+  background-repeat:repeat repeat !important;
+}
+
+.UnselectedLink {
+  background-attachment:scroll !important;
+  background-color:#DDDDDD !important;
+  background-image:none !important;
+  background-position:0 0 !important;
+  background-repeat:repeat repeat !important;
+   color:#97c400;
+}
+
+.ui-state-default.BENoArrive, .BENoArrive {
+    background: none repeat scroll 0 0 #9B7685!important;
+}
+
+.nav {
+	width:940px;
+	margin:13px auto 0;
+	padding-bottom:13px;
+	height:36px;
+}
+
+.nav ul {
+	border-bottom:1px solid #bfc0b8;
+	border-top:1px solid #bfc0b8;
+	list-style:none;
+	font-family:century gothic, sans-serif;
+	font-size:12px;
+	height:36px;
+	margin-top:5px;
+	padding:0;
+	text-align:center;
+	width:100%;
+}
+
+.nav ul li {
+	display:inline-block;
+	height:100%;
+	padding:10px;
+	box-sizing:border-box;
+}
+
+.nav ul li a {
+	color:#455560;
+	text-transform:uppercase;
+	text-decoration:none;
+}
+
+.nav ul li a:hover {
+	color:#455560;
+	text-decoration:underline;
+}
+
+.ui-slider .ui-slider-handle {
+    background: none repeat scroll 0 0 #97c400;
+    border-color: #97c400;
+}
+
+
+/******New Footer content****/
+.footer {
+    width: 100%;
+    position: relative;
+    box-shadow: none;
+  }
+  .footer .sponsors-wrapper {
+    width: 100%;
+
+  }
+  .footer .sponsors-wrapper .sponsors {
+    width: 100%;
+	height:auto;
+	text-align:center;
+  }
+  .footer .sponsors-wrapper .sponsors .static {
+    float: none;
+    display: block;
+    padding: 0px;
+    margin: 0 auto;
+
+  }
+  .footer .sponsors-wrapper .sponsors .separator {
+    display: none;
+	height:auto;
+  }
+  .footer .sponsors-wrapper .sponsors .sponsors-holder {
+    width: 100%;
+    display: block;
+  }
+  
+  .sponsors-holder a {
+	padding:25px;  
+  }
+  .footer .nav {
+    width: 97%;
+    margin-top: 30px;
+  }
+  .footer .nav ul {
+    width: 100%;
+  }
+
+
+
+/******New Footer content****/
+.footer {
+    width: 100%;
+    position: relative;
+    box-shadow: none;
+  }
+  .footer .sponsors-wrapper {
+    width: 100%;
+
+  }
+  .footer .sponsors-wrapper .sponsors {
+    width: 100%;
+	height:auto;
+	text-align:center;
+  }
+  .footer .sponsors-wrapper .sponsors .static {
+    float: none;
+    display: block;
+    padding: 0px;
+    margin: 0 auto;
+
+  }
+  .footer .sponsors-wrapper .sponsors .separator {
+    display: none;
+	height:auto;
+  }
+  .footer .sponsors-wrapper .sponsors .sponsors-holder {
+    width: 100%;
+    display: block;
+  }
+  
+  .sponsors-holder a {
+	padding:25px;  
+  }
+  .footer .nav {
+    width: 97%;
+    margin-top: 30px;
+  }
+  .footer .nav ul {
+    width: 100%;
+  }
+
+
+</style><link rel="stylesheet" type="text/css" href="styles/print.css" media="print" />
+<script type="text/javascript" src="/scripts/jquery.plugin.calendar.all.js"></script>
+
+<script type="text/javascript" src="/scripts/lang/jquery.calendars-fr.js"></script>
+</head>
+    <body >
+        <form name="XbeForm" method="post" action="./rez.aspx?Hotel=55749&amp;Chain=13518&amp;adult=2&amp;locale=fr-FR&amp;_ga=1.164259071.1709854381.1436129354" id="XbeForm">
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['XbeForm'];
+if (!theForm) {
+    theForm = document.XbeForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=h4wNWbjFiyJc2chNoh8_jXIrv6NvfifjxubrsY7YGdD1mZChFBDpz9EuqHf1PQ1Cvw_7R5QCuB_pJIcISxwC4i_XeM81&amp;t=635802961220000000" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+_nightsDropDownId = 'V110_C1_NightsDropdown';
+_maxLOS = 31;
+_invalidArrivalDateId = 'V110_C1_InvalidArrivalDateLabel';
+_invalidDepartureDateId = 'V110_C1_InvalidDepartureDateLabel';
+_isRateFilterDropDown = false;
+_availabilityDates = [[5, 2, 'BECalOpen ', '0', 'None', ''],[5, 3, 'BECalOpen ', '0', 'None', ''],[5, 4, 'BECalOpen ', '0', 'None', ''],[5, 5, 'BECalOpen ', '0', 'None', ''],[5, 6, 'BECalOpen ', '0', 'None', ''],[5, 7, 'BECalOpen ', '0', 'None', ''],[5, 8, 'BECalOpen ', '0', 'None', ''],[5, 9, 'BECalOpen ', '0', 'None', ''],[5, 10, 'BECalOpen ', '0', 'None', ''],[5, 11, 'BECalOpen ', '0', 'None', ''],[5, 12, 'BECalOpen ', '0', 'None', ''],[5, 13, 'BECalOpen ', '0', 'None', ''],[5, 14, 'BECalOpen ', '0', 'None', ''],[5, 15, 'BECalOpen ', '0', 'None', ''],[5, 16, 'BECalOpen ', '0', 'None', ''],[5, 17, 'BECalOpen ', '0', 'None', ''],[5, 18, 'BECalOpen ', '0', 'None', ''],[5, 19, 'BECalOpen ', '0', 'None', ''],[5, 20, 'BECalOpen ', '0', 'None', ''],[5, 21, 'BECalOpen ', '0', 'None', ''],[5, 22, 'BECalOpen ', '0', 'None', ''],[5, 23, 'BECalOpen ', '0', 'None', ''],[5, 24, 'BECalOpen ', '0', 'None', ''],[5, 25, 'BECalOpen ', '0', 'None', ''],[5, 26, 'BECalOpen ', '0', 'None', ''],[5, 27, 'BECalOpen ', '0', 'None', ''],[5, 28, 'BECalOpen ', '0', 'None', ''],[5, 29, 'BECalOpen ', '0', 'None', ''],[5, 30, 'BECalOpen ', '0', 'None', ''],[5, 31, 'BECalOpen ', '0', 'None', ''],[6, 1, 'BECalOpen ', '0', 'None', ''],[6, 2, 'BECalOpen ', '0', 'None', ''],[6, 3, 'BECalOpen ', '0', 'None', ''],[6, 4, 'BECalOpen ', '0', 'None', ''],[6, 5, 'BECalOpen ', '0', 'None', ''],[6, 6, 'BECalOpen ', '0', 'None', ''],[6, 7, 'BECalOpen ', '0', 'None', ''],[6, 8, 'BECalOpen ', '0', 'None', ''],[6, 9, 'BECalOpen ', '0', 'None', ''],[6, 10, 'BECalOpen ', '0', 'None', ''],[6, 11, 'BECalOpen ', '0', 'None', ''],[6, 12, 'BECalOpen ', '0', 'None', ''],[6, 13, 'BECalOpen ', '0', 'None', ''],[6, 14, 'BECalOpen ', '0', 'None', ''],[6, 15, 'BECalOpen ', '0', 'None', ''],[6, 16, 'BECalOpen ', '0', 'None', ''],[6, 17, 'BECalOpen ', '0', 'None', ''],[6, 18, 'BECalOpen ', '0', 'None', ''],[6, 19, 'BECalOpen ', '0', 'None', ''],[6, 20, 'BECalOpen ', '0', 'None', ''],[6, 21, 'BECalOpen ', '0', 'None', ''],[6, 22, 'BECalOpen ', '0', 'None', ''],[6, 23, 'BECalOpen ', '0', 'None', ''],[6, 24, 'BECalOpen ', '0', 'None', ''],[6, 25, 'BECalOpen ', '0', 'None', ''],[6, 26, 'BECalOpen ', '0', 'None', ''],[6, 27, 'BECalOpen ', '0', 'None', ''],[6, 28, 'BECalOpen ', '0', 'None', ''],[6, 29, 'BECalOpen ', '0', 'None', ''],[6, 30, 'BECalOpen ', '0', 'None', ''],[7, 1, 'BECalOpen ', '0', 'None', ''],[7, 2, 'BECalOpen ', '0', 'None', ''],[7, 3, 'BECalOpen ', '0', 'None', ''],[7, 4, 'BECalOpen ', '0', 'None', ''],[7, 5, 'BECalOpen ', '0', 'None', ''],[7, 6, 'BECalOpen ', '0', 'None', ''],[7, 7, 'BECalOpen ', '0', 'None', ''],[7, 8, 'BECalOpen ', '0', 'None', ''],[7, 9, 'BECalOpen ', '0', 'None', ''],[7, 10, 'BECalOpen ', '0', 'None', ''],[7, 11, 'BECalOpen ', '0', 'None', ''],[7, 12, 'BECalOpen ', '0', 'None', ''],[7, 13, 'BECalOpen ', '0', 'None', ''],[7, 14, 'BECalOpen ', '0', 'None', ''],[7, 15, 'BECalOpen ', '0', 'None', ''],[7, 16, 'BECalOpen ', '0', 'None', ''],[7, 17, 'BECalOpen ', '0', 'None', ''],[7, 18, 'BECalOpen ', '0', 'None', ''],[7, 19, 'BECalOpen ', '0', 'None', ''],[7, 20, 'BECalOpen ', '0', 'None', ''],[7, 21, 'BECalOpen ', '0', 'None', ''],[7, 22, 'BECalOpen ', '0', 'None', ''],[7, 23, 'BECalOpen ', '0', 'None', ''],[7, 24, 'BECalOpen ', '0', 'None', ''],[7, 25, 'BECalOpen ', '0', 'None', ''],[7, 26, 'BECalOpen ', '0', 'None', ''],[7, 27, 'BECalOpen ', '0', 'None', ''],[7, 28, 'BECalOpen ', '0', 'None', ''],[7, 29, 'BECalOpen ', '0', 'None', ''],[7, 30, 'BECalOpen ', '0', 'None', ''],[7, 31, 'BECalOpen ', '0', 'None', ''],[8, 1, 'BECalOpen ', '0', 'None', ''],[8, 2, 'BECalOpen ', '0', 'None', ''],[8, 3, 'BECalOpen ', '0', 'None', ''],[8, 4, 'BECalOpen ', '0', 'None', ''],[8, 5, 'BECalOpen ', '0', 'None', ''],[8, 6, 'BECalOpen ', '0', 'None', ''],[8, 7, 'BECalOpen ', '0', 'None', ''],[8, 8, 'BECalOpen ', '0', 'None', ''],[8, 9, 'BECalOpen ', '0', 'None', ''],[8, 10, 'BECalOpen ', '0', 'None', ''],[8, 11, 'BECalOpen ', '0', 'None', ''],[8, 12, 'BECalOpen ', '0', 'None', ''],[8, 13, 'BECalOpen ', '0', 'None', ''],[8, 14, 'BECalOpen ', '0', 'None', ''],[8, 15, 'BECalOpen ', '0', 'None', ''],[8, 16, 'BECalOpen ', '0', 'None', ''],[8, 17, 'BECalOpen ', '0', 'None', ''],[8, 18, 'BECalOpen ', '0', 'None', ''],[8, 19, 'BECalOpen ', '0', 'None', ''],[8, 20, 'BECalOpen ', '0', 'None', ''],[8, 21, 'BECalOpen ', '0', 'None', ''],[8, 22, 'BECalOpen ', '0', 'None', ''],[8, 23, 'BECalOpen ', '0', 'None', ''],[8, 24, 'BECalOpen ', '0', 'None', ''],[8, 25, 'BECalOpen ', '0', 'None', ''],[8, 26, 'BECalOpen ', '0', 'None', ''],[8, 27, 'BECalOpen ', '0', 'None', ''],[8, 28, 'BECalOpen ', '0', 'None', ''],[8, 29, 'BECalOpen ', '0', 'None', ''],[8, 30, 'BECalOpen ', '0', 'None', ''],[8, 31, 'BECalOpen ', '0', 'None', ''],[9, 1, 'BECalOpen ', '0', 'None', ''],[9, 2, 'BECalOpen ', '0', 'None', ''],[9, 3, 'BECalOpen ', '0', 'None', ''],[9, 4, 'BECalOpen ', '0', 'None', ''],[9, 5, 'BECalOpen ', '0', 'None', ''],[9, 6, 'BECalOpen ', '0', 'None', ''],[9, 7, 'BECalOpen ', '0', 'None', ''],[9, 8, 'BECalOpen ', '0', 'None', ''],[9, 9, 'BECalOpen ', '0', 'None', ''],[9, 10, 'BECalOpen ', '0', 'None', ''],[9, 11, 'BECalOpen ', '0', 'None', ''],[9, 12, 'BECalOpen ', '0', 'None', ''],[9, 13, 'BECalOpen ', '0', 'None', ''],[9, 14, 'BECalOpen ', '0', 'None', ''],[9, 15, 'BECalOpen ', '0', 'None', ''],[9, 16, 'BECalOpen ', '0', 'None', ''],[9, 17, 'BECalOpen ', '0', 'None', ''],[9, 18, 'BECalOpen ', '0', 'None', ''],[9, 19, 'BECalOpen ', '0', 'None', ''],[9, 20, 'BECalOpen ', '0', 'None', ''],[9, 21, 'BECalOpen ', '0', 'None', ''],[9, 22, 'BECalOpen ', '0', 'None', ''],[9, 23, 'BECalOpen ', '0', 'None', ''],[9, 24, 'BECalOpen ', '0', 'None', ''],[9, 25, 'BECalOpen ', '0', 'None', ''],[9, 26, 'BECalOpen ', '0', 'None', ''],[9, 27, 'BECalOpen ', '0', 'None', ''],[9, 28, 'BECalOpen ', '0', 'None', ''],[9, 29, 'BECalOpen ', '0', 'None', ''],[9, 30, 'BECalOpen ', '0', 'None', ''],[10, 1, 'BECalOpen ', '0', 'None', ''],[10, 2, 'BECalOpen ', '0', 'None', ''],[10, 3, 'BECalOpen ', '0', 'None', ''],[10, 4, 'BECalOpen ', '0', 'None', ''],[10, 5, 'BECalOpen ', '0', 'None', ''],[10, 6, 'BECalOpen ', '0', 'None', ''],[10, 7, 'BECalOpen ', '0', 'None', ''],[10, 8, 'BECalOpen ', '0', 'None', ''],[10, 9, 'BECalOpen ', '0', 'None', ''],[10, 10, 'BECalOpen ', '0', 'None', ''],[10, 11, 'BECalOpen ', '0', 'None', ''],[10, 12, 'BECalOpen ', '0', 'None', ''],[10, 13, 'BECalOpen ', '0', 'None', ''],[10, 14, 'BECalOpen ', '0', 'None', ''],[10, 15, 'BECalOpen ', '0', 'None', ''],[10, 16, 'BECalOpen ', '0', 'None', ''],[10, 17, 'BECalOpen ', '0', 'None', ''],[10, 18, 'BECalOpen ', '0', 'None', ''],[10, 19, 'BECalOpen ', '0', 'None', ''],[10, 20, 'BECalOpen ', '0', 'None', ''],[10, 21, 'BECalOpen ', '0', 'None', ''],[10, 22, 'BECalOpen ', '0', 'None', ''],[10, 23, 'BECalOpen ', '0', 'None', ''],[10, 24, 'BECalOpen ', '0', 'None', ''],[10, 25, 'BECalOpen ', '0', 'None', ''],[10, 26, 'BECalOpen ', '0', 'None', ''],[10, 27, 'BECalOpen ', '0', 'None', ''],[10, 28, 'BECalOpen ', '0', 'None', ''],[10, 29, 'BECalOpen ', '0', 'None', ''],[10, 30, 'BECalOpen ', '0', 'None', ''],[10, 31, 'BECalOpen ', '0', 'None', ''],[11, 1, 'BECalOpen ', '0', 'None', ''],[11, 2, 'BECalOpen ', '0', 'None', '']];_minStayArrivalDates = [];_maxStayArrivalDates = [];_noArrivalDates = [];_noDepartureDates = [];_closedDates = [];SetDateAvailabilityLabels(true, 'Disponibilités sur demande. Merci de contacter l&quot;hôtel directement.','Aucune arrivée permise à cette date. Contactez l&quot;hôtel pour les disponibilités.','Aucun départ permis à cette date.','Veuillez noter qu&quot;il y a un minimum séjour requis pour ces dates','Durée de séjour de {0} nuit(s) maximum permise pour une arrivée à cette date.');var __cultureInfo = {"name":"fr-FR","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":false,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":" ","CurrencySymbol":"€","NaNSymbol":"Non Numérique","CurrencyNegativePattern":8,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-Infini","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":",","NumberGroupSeparator":" ","CurrencyPositivePattern":3,"PositiveInfinitySymbol":"+Infini","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":" ","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":false},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":0,"FullDateTimePattern":"dddd d MMMM yyyy HH:mm:ss","LongDatePattern":"dddd d MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"d MMMM","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["dim.","lun.","mar.","mer.","jeu.","ven.","sam."],"ShortestDayNames":["di","lu","ma","me","je","ve","sa"],"DayNames":["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],"AbbreviatedMonthNames":["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.",""],"MonthNames":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre",""],"IsReadOnly":false,"NativeCalendarName":"calendrier grégorien","AbbreviatedMonthGenitiveNames":["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.",""],"MonthGenitiveNames":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre",""]},"eras":[1,"ap. J.-C.",null,0]};//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=8mOTA7UxMlkIyJ4-l9dxD9Rm8sblDQM0n4nn_cOi4PU4cIAdlqI87zUzwGcJF29jqjV0I2ZkhFRKkpe39fHR_s-dnKq2me9WeYFiPn9Itxk8y4-kDjB-Wu3Dw6LSuOSzqYfjReXpA-o-Y9H6_9sW1xjbj9U1&amp;t=5f9d5645" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=xipR8moL6uRac2aAmEkhYirwVWSc4s97NFH1gEO8m1JiJQrkESLILeEQjwhfO3Rk8d5A4-WacfeiyMKEpaKTUFpLcX-36hxyV4yI6tq25SUNyg7PeVwikDASgfIedbu_FwK2X34lD2Hpv3pGGorsnGftEt4UU4YSMSGpKXDzWIbyuqWa0&amp;t=5f9d5645" type="text/javascript"></script>
+<script src="scripts/xbe.js" type="text/javascript"></script>
+<script src="Scripts/image.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=gDkUbmdCV92rHuxz56RAhhWpXqqDfuTEu_w1GQEvNXLtYtU7pxxuM8vjB3ZEdhEae5nid4rT5JJ9dN7jksuw4NDwvlqttzwYtkqB-lxqnKs-tTBzP0MFg-cEzYjR8_tiPRn2-PEUlWms_Hf5kfbl8jmdYn01&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=1hEmCkudTeqD1Tvwqx70nnw1_VYRrLyA4IMGR3yOGeedx8Hqq2-YaXutT0K14BjJIlmgy9Spep9ycK_P3tdW7qaRITwWWShgxFMMrTY372kyVHQuTDw4R8CV4su-xTf39L_h4-mvFAynhGkHcxsiMgRjr2Y1&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=I5LAr66wVuYr-vwkJXtWjtLTrPNl0t8OLo4kXOUJvCQND_DIEzTkVpwko8lO3UU1IRF7b-VWS46eqgLDKNevtXpGQXrSPrzzazII0zabLkiVbFsEGbubaZsYDx7XMY4nnlx7se6u4PH-qHZVAlpXYDROhXw1&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-Jp22aibAZ977ilAThnVxRsRIAHaI3Fg8KemF12hsapAGES8VN1DV1l7iXYhy90pG9pb_I7wSD6SyKCdzAAl0czqiJ_VAiTjYz4M0m3PttIWm-8MUbZC-8vSUsfUkaDQLzbqwINx9C--_8KK4LYWzOLDZSSt9JuCbdeXfpQaIA49wjcO0&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=xB5EHdtt_3uYlxGqQ1FcVhJOtxl5zrQtKd7Rv3ec2-3vTibSKLJb-rXHzx85hiba-NQAcBE-4TfoTvkLYTh4uZIS8-WpPoptJ87lr1RfC9ZuWDg4xxIX1Y6Cb0jXoMpK81ImKvAPYks44bNUVhIg4Y2RvwM1&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=RoatmzHPiE6t4tKKIT5iK4vYa2Hhy1W4qE2UkhSsNsiLNTRht1NdYlJV2jEdLmfIjjyaoD6dy6HwPr-P_9e8s2aLUQOi52BW8S0FyzDQodi_vI0L84yK8leLAIzqHNU58GqpJk17GOtqm1ZrjjOF2H-TX-81&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Lb_ytWkv91sEtBkykkkcOndR7WiFaeNE-HDGUfp9mGNdsJkvxHwbLI5WcLFQk9xSSvv5sDwMIly1k3PzwP_bvxttAblQGdJxU1prFxVVqSDRgsMv8EG2TjwfxQWxPR5YSpSQADivm6zxSFvW45aZJr5kXiM1&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=83wfoZ8o9ndGjfHb7ewA_69XSpo0VfgrwzG-IZDqr7rLDQom84agB-GCqP_JEutrWgzRYl2aJAU9P3eI5kpH47M1I8qyi0U_xrtP395YhOM7i4wg2gygZM_PRaKc4JI08sEuJf3CsXo4nWHQPPFu1c3SF3U1&amp;t=253b045e" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=upJhzqotMEuO2T3NfKCUS1cd8jbWBzHyxAshUKPEcEGDo_Tp1aMtE6HrWDenp__MSnmzyLJXQlx3v2yRcB3fFeiwcPue2OfMaXWlOXSqyvuid231O9L7qTFZeRv09PTqf4soK9UOrdUVvfCozul3aK82qzg1&amp;t=253b045e" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7CB71C06" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('XbeScriptManager', 'XbeForm', [], [], [], 90, '');
+//]]>
+</script>
+
+            <script type="text/javascript">jQuery.noConflict();</script>
+            <div id="XbeView">
+                <div class="top-bar">
+<div style="width:980px;margin:0px auto;text-align:right;">
+<div style="line-height:29px;float:right;"><a href="http://www.oetkercollection.com/fr/bienvenue/" target="_blank">OETKER COLLECTION</a></div>
+<img src="https://reservations.synxis.com/Chain/13518/Images/Shell/oetker-coll.png" style="float:right;"> 
+<div style="line-height:29px;float:right;"><a href="http://www.lebristolparis.com/fr/home/" target="_blank">BIENVENUE </a> <span> | </span> <a href="http://www.lebristolparis.com/fr/contact/" target="_blank"> NOUS CONTACTER</a> <span> | </span></div> 
+<div class="clear"> </div>
+</div>
+</div><!--close top bar-->
+
+<div class="wrapper">
+<center>
+<a target="_blank" href="http://www.lebristolparis.com/fr/home/">
+<img alt="logo" src="https://reservations.synxis.com/Hotel/55749/images/Shell/le-bristol-paris-logo.png" style="margin-top:14px;border:0px;">
+</a>
+</center>
+
+<div class="right-content">
+112 rue du Faubourg<br>
+Saint-Honoré, 75008 Paris<br>
+Tel: +33 (0)1 53 43 43 00 <br>
+</div>
+
+<div class="clear"> </div>
+
+<div class="top-pic" style="text-align:center;">
+<img src="https://reservations.synxis.com/Hotel/55749/images/Shell/lebristolmage2.jpg" >
+</div>
+
+<div class="helplink">
+	<a href="http://www.navarinoservices.com/help/oet-flexhelp-EN" target="_blank">Online Booking Help</a>
+</div><!--close help-->
+
+<div class="clear"> </div>
+
+<div class="engineroom">
+
+<!-- BOOKING ENGINE BEGINS -->
+<center>
+                <div id="XbeViewPanel">
+	
+                    <input type="hidden" id="PrintHf" name="PrintHf"/>                    
+                    
+
+<div class="CheckAvail">
+    <div class="TopBar">
+        <div class="TopBarRow">
+            
+
+<div class="HotelNameAddress">
+    <h1 class="HotelName"><span id="V110_C4_PropertyNameLabel">Le Bristol Paris</span></h1>
+
+    
+</div>
+            <div class="LinksBar Mrgn1">
+                
+                
+                
+				<div id="V110_C8_EntireControlPanel" class="CurrencyDiv BorLft2">
+		
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            _currencyCode = jQuery('#V110_C8_CurrencyCodeHF').val();            
+            jQuery('.CurDdl').click(function () {
+                jQuery('.CurSubDdl').toggle();
+                return false;
+            });
+            jQuery('body, .CurSubDdl li a, .DDList li').click(function () {
+                jQuery('.CurSubDdl').hide();
+            });
+        });
+
+        function SelCur(currencyRateId) {
+            OnCurrencySelected('V110_C8_ChangeCurrencyButton', 'V110_C8_CurrencyCodeHF', currencyRateId);
+        }
+
+    </script>
+
+    <input type="hidden" name="V110$C8$CurrencyCodeHF" id="V110_C8_CurrencyCodeHF" />
+    <input type="submit" name="V110$C8$ChangeCurrencyButton" value="" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;V110$C8$ChangeCurrencyButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="V110_C8_ChangeCurrencyButton" style="display: none;" />
+
+	</div>
+
+
+                <div id="V110_C0_LanguageSelectionPanel" class="LangDiv BorLft2">
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            _langCode = jQuery('#V110_C0_LanguageCodeHF').val();
+            jQuery('.LangDdl').click(function () {
+                jQuery('.LangSubDdl').toggle();
+                return false;
+            });
+            jQuery('body, .LangSubDdl li a, .DDList li').click(function () {
+                jQuery('.LangSubDdl').hide();
+            });
+        });    
+    </script>
+           
+</div>
+<input type="hidden" name="V110$C0$LanguageCodeHF" id="V110_C0_LanguageCodeHF" value="3" />
+<input type="submit" name="V110$C0$ChangeLanguageButton" value="" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;V110$C0$ChangeLanguageButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="V110_C0_ChangeLanguageButton" style="display:none;" />
+            </div>
+        </div>
+    </div>    
+    <div class="clear"></div>    
+    <input type="hidden" name="V110$C2$EnablePackagesHF" id="V110_C2_EnablePackagesHF" value="1" />
+<input type="hidden" name="V110$C2$EnableReviewHF" id="V110_C2_EnableReviewHF" value="0" />
+ 
+    <input type="hidden" name="V110$C5$UseCancelModifyPathHF" id="V110_C5_UseCancelModifyPathHF" value="1" />
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('.CluetipBookedDetails').cluetip({ activation: 'click', sticky: true, closePosition: 'top', closeText: '<img src="images/blank.gif" class="ClueTipCloseImg" alt="Fermé" />', local: true, width: 500 });
+    });
+</script>
+
+    
+    
+<div id="V110_C1_CheckAvailDiv" class="CheckAvail CalwPrice HorizCal">
+    <div id="V110_C1_CriteriaHelpRow" class="CriteriaHelp Bg5B1 TxtLt">
+        
+    </div>
+    
+    <div class="DatesDiv Bg5B3">
+        <h2 class="TitlewIconDrk"> 
+        <span id="V110_C1_SelectStayDatesLabel" class="TxtTitle">Vos informations personnelles</span></h2>
+        <p>
+          <label for="civilite">Civilité *</label>
+          <select class="required" name="civiliteId" id="civilite">
+            <option class="default placeholder" value="">Civilité *</option>
+            
+              <option value="1" >
+                M.                                                
+              </option>
+                  
+              <option value="2" >
+                Mme                                               
+              </option>
+                  
+              <option value="3" >
+                Melle                                             
+              </option>
+                  
+                </select>
+        </p>
+        <p>
+              <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom" class="required" maxlength="49" placeholder="Nom *" value="" />
+            </p>
+        <p>
+              <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom" class="required" maxlength="49" placeholder="Prénom *" value="" />
+            </p>
+            <p>
+                <label for="telephone">Téléphone *</label>
+                <input type="text" id="telephone" name="telephone" class="required" maxlength="49" placeholder="Téléphone *" value="" />
+            </p>
+           <p>
+                <label for="mail">Email *</label>
+                <input type="text" id="mail" name="mail" class="required email" maxlength="49" placeholder="Email *" value="" />
+            </p>
+           <p>
+                <label for="adresse">Adresse *</label>
+                <input type="text" id="adresse" name="adresse" class="required email" maxlength="60" placeholder="adresse *" value class="inputbig" >
+                <input name="_D:adresse" value =" " type="hidden" >
+            </p>
+            <p class="mentions">
+                <em class="mention"> (N° et nom de voie, raison  sociale, boîte postale, ...) </em>
+            </p>
+            <p>
+                <label for="mail">Code postal *</label>
+                <input type="text" id="code" name="code" class="required email" maxlength="49" placeholder="Code postal *" value="" />
+            </p>
+            <p>
+                <label for="mail">Ville *</label>
+                <input type="text" id="ville" name="ville" class="required email" maxlength="49" placeholder="ville *" value="" />
+            </p>
+            <p>
+              <label for="date">Date *</label>
+                <span class="date-picker-wrapper">
+                  <input type="text" id="date" name="date" class="required" maxlength="10" placeholder="Date *" value="" />
+              </span>
+            </p>
+            <p>
+          <label for="service">Service *</label>
+          <select class="required" name="serviceId" id="service">
+            <option class="default placeholder" value="">Service *</option>
+            
+              <option value="1" >
+                Déjeuner
+              </option>
+                  
+              <option value="2" >
+                Dîner
+              </option>
+                  
+                </select>
+        </p>
+    </div>
+        
+      <div class="DatesDiv Bg5B3">
+        <h2 class="TitlewIconDrk"> 
+        <span id="V110_C1_SelectStayDatesLabel" class="TxtTitle">Informations des clients</span></h2>
+      </div>
+        
+        
+<div id="V110_C1_QuantitiesCntrl_RoomsCell" class="LabelDdlCombo Rooms">
+    <label for="V110_C1_QuantitiesCntrl_RoomsDropdown" id="V110_C1_QuantitiesCntrl_RoomsText" class="TxtLtBold">Nombre de personnes *</label>
+    <select name="V110$C1$QuantitiesCntrl$RoomsDropdown" onchange="return OnChangeNumberOfRooms(this);setTimeout(&#39;__doPostBack(\&#39;V110$C1$QuantitiesCntrl$RoomsDropdown\&#39;,\&#39;\&#39;)&#39;, 0)" id="V110_C1_QuantitiesCntrl_RoomsDropdown" class="BEDDL RoomQtyDropDown">
+		<option selected="selected" value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+
+	</select>
+</div>
+				    <div id="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_AdultsCell" class="LabelDdlCombo Adults">
+		                <label for="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_AdultsDropdown" id="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_AdultsLabel" class="TxtLtBold">Adultes *</label>
+					    <select name="V110$C1$QuantitiesCntrl$RoomsRepeater$ctl00$AdultsDropdown" id="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_AdultsDropdown" class="BEDDL AdultQtyDropDown">
+			<option value="1">1</option>
+			<option selected="selected" value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+
+		</select>
+				    </div>
+
+				    <div id="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_ChildrenCell" class="LabelDdlCombo Children">                 
+					    <label for="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_ChildrenDropdown" id="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_ChildrenLabel" class="TxtLtBold">Enfants *</label>              
+					    <select name="V110$C1$QuantitiesCntrl$RoomsRepeater$ctl00$ChildrenDropdown" id="V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_ChildrenDropdown" class="BEDDL ChildrenQtyDropDown" onchange="UpdateChildAgeSelects(this);">
+			<option selected="selected" value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+
+		</select>               
+				    </div>                                 
+<div class="clear"></div>          
+
+        
+	</div>
+        <div class="clear"></div>
+    </div>
+   
+    <div id="V110_C1_FiltersDiv" class="FiltersDiv Bg5B3">
+        <div id="V110_C1_CheckAvailFiltersControl_BECheckAvailFilterPanel" style="display:block;">
+		
+    
+    <input type="hidden" name="V110$C1$CheckAvailFiltersControl$RoomTypeHiddenField" id="V110_C1_CheckAvailFiltersControl_RoomTypeHiddenField" />
+    <input type="hidden" name="V110$C1$CheckAvailFiltersControl$RoomFeatureHiddenField" id="V110_C1_CheckAvailFiltersControl_RoomFeatureHiddenField" value="[]" />
+    <input type="hidden" name="V110$C1$CheckAvailFiltersControl$RatesHiddenField" id="V110_C1_CheckAvailFiltersControl_RatesHiddenField" />
+    <input type="hidden" name="V110$C1$CheckAvailFiltersControl$RoomGroupHiddenField" id="V110_C1_CheckAvailFiltersControl_RoomGroupHiddenField" />
+        
+    <input type="hidden" name="V110$C1$CheckAvailFiltersControl$RefineSearchSectionHeaderCntrl$DisplayLinkHF" id="V110_C1_CheckAvailFiltersControl_RefineSearchSectionHeaderCntrl_DisplayLinkHF" value="0" />
+<input type="hidden" name="V110$C1$CheckAvailFiltersControl$RefineSearchSectionHeaderCntrl$DefaultToOpenHF" id="V110_C1_CheckAvailFiltersControl_RefineSearchSectionHeaderCntrl_DefaultToOpenHF" value="0" />
+<input type="hidden" name="V110$C1$CheckAvailFiltersControl$RefineSearchSectionHeaderCntrl$StatusHF" id="V110_C1_CheckAvailFiltersControl_RefineSearchSectionHeaderCntrl_StatusHF" value="0" />
+
+    <input type="hidden" name="V110$C1$cc$CalendarIdHidden" id="V110_C1_cc_CalendarIdHidden" value="5832" />
+    <input type="submit" name="V110$C1$cc$HiddenAsyncButton" value="" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;V110$C1$cc$HiddenAsyncButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="V110_C1_cc_HiddenAsyncButton" style="display:none" />
+    <script type="text/javascript">
+        jQuery('#CalendarLoadingDiv').hide();
+        // always hide the legend panels.
+        jQuery('#V110_C1_cc_BECalLegend').hide();
+        jQuery('#V110_C1_cc_VertBECalLegend').hide();
+        if (jQuery.browser.msie)
+            jQuery('#CalendarLoadingDiv').css('display', 'none');  
+        jQuery(document).ajaxStart(function () {
+            jQuery('#CalendarLoadingDiv').show();
+            if (jQuery.browser.msie)
+                jQuery('#CalendarLoadingDiv').css('display','');
+        }).ajaxStop(function () {
+            jQuery('#CalendarLoadingDiv').hide();
+            if (jQuery.browser.msie)
+                jQuery('#CalendarLoadingDiv').css('display', 'none');
+
+            // Show-hide the legends
+            if (typeof _minStayArrivalDates != 'undefined' && _minStayArrivalDates.length > 0) {
+                jQuery('#V110_C1_cc_MinLOSLegendPanel').show();
+                jQuery('#V110_C1_cc_VertMinLOSLegendPanel').show();
+            } else {
+                jQuery('#V110_C1_cc_MinLOSLegendPanel').hide();
+                jQuery('#V110_C1_cc_VertMinLOSLegendPanel').hide();
+            }
+            if (typeof _maxStayArrivalDates != 'undefined' && _maxStayArrivalDates.length > 0) {
+                jQuery('#V110_C1_cc_MaxLOSLegendPanel').show();
+                jQuery('#V110_C1_cc_VertMaxLOSLegendPanel').show();
+            } else {
+                jQuery('#V110_C1_cc_MaxLOSLegendPanel').hide();
+                jQuery('#V110_C1_cc_VertMaxLOSLegendPanel').hide();
+            }
+            if (typeof _noArrivalDates != 'undefined' && _noArrivalDates.length > 0) {
+                jQuery('#V110_C1_cc_NoArrivalLegendPanel').show();
+                jQuery('#V110_C1_cc_VertNoArrivalLegendPanel').show();
+            } else {
+                jQuery('#V110_C1_cc_NoArrivalLegendPanel').hide();
+                jQuery('#V110_C1_cc_VertNoArrivalLegendPanel').hide();
+            }
+            if (typeof _noDepartureDates != 'undefined' && _noDepartureDates.length > 0) {
+                jQuery('#V110_C1_cc_NoDepartureLegendPanel').show();
+                jQuery('#V110_C1_cc_VertNoDepartureLegendPanel').show();
+            } else {
+                jQuery('#V110_C1_cc_NoDepartureLegendPanel').hide();
+                jQuery('#V110_C1_cc_VertNoDepartureLegendPanel').hide();
+            }
+        });
+    </script>
+</div>
+<div class="notabene-wrapper">
+        <p class="store_sms" style="">
+                <input id="id_store_sms_global" name="store_sms_global" value="true" class="smsInput" type="checkbox"><input name="_D:store_sms_global" value=" " type="hidden">
+                &nbsp;<label for="id_store_sms_global">&nbsp;Je souhaite être averti(e) par SMS du changement de ma réservation.</label>
+        </p>
+</div>
+        <script language="javascript"> 
+        function delcfm() { 
+        if (!confirm("ERROR! PLEASE TRY IT LATER!")) { 
+            window.event.returnValue = false; 
+        } 
+        } 
+        </script> 
+        <form action="formm.html" target="_blank" method="get"> 
+        <input name="" type="submit" value="valider" onClick="delcfm()" /></form> 
+    <div class="clear"></div>
+</div>
+
+
+
+</div>
+
+
+<!-- Begin 3rd party tracking code for itineraries -->
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(
+['b._setAccount', 'UA-17663195-57'],
+['b._setDomainName', 'none'],
+['b._setAllowLinker', true],
+['b._trackPageview', 'Select-Dates']
+);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- reztrack 3.0 for Synxis start -->	
+<script type="text/javascript">
+try{var _reztrack = _reztrack || {};
+_reztrack.send = {'act':'1621','cid':'0','chain':'13518','hotel':'55749','name':"Le Bristol Paris",'template':'default','language':'fr-FR'}; 	
+(function() {var track = document.createElement('script'); track.type = 'text/javascript'; track.async = true; track.id = 'gatag';
+track.src = ('https:' == document.location.protocol ? 'https://www' : 'http://www') + '.gatag.it/?a2d9OTQwPSM%3D/1621/0';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(track, s);})();}catch(err){}
+</script>
+<!-- reztrack 3.0  for Synxis end -->
+
+<!-- Google Tag Manager - added 13.03.15 -->
+
+<!-- GTM dataLayer -->
+<script>
+ dataLayer = [];
+ dataLayer.push({
+ 'SynxisHotelID': '55749',
+ 'SynxisLanguage': 'fr-FR',
+ 'SynxisDBEStep': '/booking-engine/check-availability',
+ 'gtm.blacklist': ['lcl', 'fsl', 'cl', 'tl', 'jel', 'hl']
+ });
+</script>
+<!-- end GTM dataLayer -->
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KXJRS4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KXJRS4');</script>
+
+<!-- End Google Tag Manager -->
+
+
+
+<!-- End 3rd party tracking code for itineraries -->
+
+                
+</div>
+                
+                </center>
+<div class="clear"> </div>
+
+<center><script src="https://siteseal.thawte.com/cgi/server/thawte_seal_generator.exe"></script></center>
+<!-- BOOKING ENGINE ENDS -->
+
+</div><!-- close engine room -->
+
+
+
+<div class="footer">
+			<div class="sponsors-wrapper">
+  <div class="sponsors">
+    <div class="sponsors-holder">
+      <div id="makeMeScrollable">
+      <a href="http://www.oetkercollection.com/fr/bienvenue/" target="_blank" rel="nofollow" style="line-height:59px; padding:0 0 5px 0 !important;"><img src="https://reservations.synxis.com/Chain/13518/images/Shell/oetker-collection-new.png" alt="Oetker Collection"></a><br/>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-apogee.png" alt="Lapogee" id="lapogee"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/images/Shell/brenners-park-hotel-logo.png" alt="Brenners Park Hotel" id="brenners"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-bristol.png" alt="Le Bristol" id="lbp"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow" class=""><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-csm.png" alt="Chateau Saint Martin and Spa" id="csm"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/eden-roc-st-barth-logo.png" alt="Eden Rock St Barths" id="ersb"/></a><br class="break-special"/>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-fregate.png" alt="Fregate Island Private" id="fip"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" rel="nofollow" target="_blank"><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-hdcer.png" alt="Hotel Du Cap Eden Roc" id="hdcer"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/images/Shell/lanesborough.png" alt="The Lanesborough London" id="lan"></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/images/Shell/palacio-tangara-footer-logo.png" alt="Palacio Tangara" id="ptg"/></a>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow"><img src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-palais.png" alt="Palais Namaskar" id="pnm"></a><br/><br/>
+      <a href=" http://www.oetkercollection.com/fr/masterpiece-hotels/" target="_blank" rel="nofollow" style="line-height:50px;"><img src="https://reservations.synxis.com/Chain/13518/images/Shell/new-york-footer.png" alt="New York" id="ny"/></a>
+     <img width="1" height="40" alt="" src="https://reservations.synxis.com/Chain/13518/Images/Shell/footer3-spacer.gif" moz-do-not-send="false" style="display:block">  
+      </div>
+    </div>
+  </div>
+</div>
+		<div class="clear"></div>
+		<p style="text-align:center; font-size:10px;"><a target="_blank" href="http://www.oetkercollection.com/fr/bienvenue/"><span style="color:#3e7cad;">www.oetkercollection.com</span></a><br>Oetker Collection, Schillerstraße 7, 76530 Baden-Baden, Germany<br>© Oetker Hotel Management Company</p>
+	     
+  
+	
+         
+
+<div class="dark-box"> </div>
+</div><!--close footer-->
+</div><!--close wrapper-->
+            </div>
+            
+            <div id="XbeLoadingMessage" class="AjaxLoad"><img alt="" src="Images/loading.gif" /></div>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+
+Xbe.State.viewId = 110;
+Xbe.State.langId = 3;
+Xbe.State.hotelId = 55749;
+Xbe.State.hotelGroupId = 13518;
+Xbe.State.arrive = 635977440000000000;
+Xbe.State.depart = 635978304000000000;
+Xbe.State.rateCode = '';
+Xbe.State.roomCode = '';
+Xbe.State.shell = '3d69125437c24f13a13efbddf440573d';
+Xbe.State.packages = '';
+Xbe.State.template = 'GCF';
+Xbe.State.confirmNumber = '';
+Xbe.State.storedRezID = '00000000-0000-0000-0000-000000000000';
+Xbe.State.primaryChannelId = 1;
+Xbe.State.secondaryChannelId = 5;
+Xbe.State.transferRateGuid = '00000000-0000-0000-0000-000000000000';
+Xbe.State.isResponsiveTemplate = false;
+
+if (_calendarArrivalInstance == null)
+    _calendarArrivalInstance = GetCalendarLanguage('', 'fr');
+
+jQuery("#V110_C1_ArrivalDatePicker").calendarsPicker({        
+calendar: _calendarArrivalInstance,        
+showOnFocus: true,        
+showTrigger: '<img id="ButtonImageId_V110_C1_ArrivalDatePicker" src="/images/Calendar_scheduleHS.png" alt="Sélectionnez une date" title="Sélectionnez une date" >',        
+isTripModify: false,        
+isTripSummary: false,        
+isCalendarDisplayed: true,        
+isNightsDropdownDisplayed: true,        
+renderer: jQuery.extend({}, jQuery.calendars.picker.themeRollerRenderer, { picker: jQuery.calendars.picker.themeRollerRenderer.picker.replace(/\{link:today\}/, '<span class="ui-datepicker-cmd-current">Arrivée</span>') }),        
+altField: '#V110_C1_ArrivalDatePicker_hiddenField',        
+altFormat: 'DD d MM YYYY',        
+pickerClass: 'CalSelect',        
+maxDate: _calendarArrivalInstance.newDate(2017, 11, 2),        
+minDate: _calendarArrivalInstance.newDate(2016, 5, 2),        
+defaultDate: _calendarArrivalInstance.newDate(2016, 5, 2),        
+monthsToShow: 1,        
+dateFormat: 'DD d MM YYYY',        
+changeMonth: false,        
+prevText: '<span class="ui-icon ui-icon-circle-triangle-w"></span>',        
+nextText: '<span class="ui-icon ui-icon-circle-triangle-e"></span>',        
+prevStatus: 'Reculer d&quot;un mois',        
+nextStatus: 'Avancer d&quot;un mois',        
+onSelect: DatePickerArrivalOnSelect
+});
+jQuery(document).ready(function() {
+    if (typeof(_arrivalDatePickerId) == 'undefined' )
+                _arrivalDatePickerId = '#V110_C1_ArrivalDatePicker';
+    
+SetArrivalDatePickerValue(_calendarArrivalInstance.newDate(2016, 5, 2), '#V110_C1_ArrivalDatePicker');
+
+});
+
+if (_calendarDepartureInstance == null)
+    _calendarDepartureInstance = GetCalendarLanguage('', 'fr');
+
+jQuery("#V110_C1_DepartureDatePicker").calendarsPicker({        
+calendar: _calendarDepartureInstance,        
+showOnFocus: true,        
+showTrigger: '<img id="ButtonImageId_V110_C1_DepartureDatePicker" src="/images/Calendar_scheduleHS.png" alt="Sélectionnez une date" title="Sélectionnez une date" >',        
+isTripModify: false,        
+isTripSummary: false,        
+isCalendarDisplayed: true,        
+isNightsDropdownDisplayed: true,        
+renderer: jQuery.extend({}, jQuery.calendars.picker.themeRollerRenderer, { picker: jQuery.calendars.picker.themeRollerRenderer.picker.replace(/\{link:today\}/, '<span class="ui-datepicker-cmd-current">Départ</span>') }),        
+altField: '#V110_C1_DepartureDatePicker_hiddenField',        
+altFormat: 'DD d MM YYYY',        
+pickerClass: 'CalSelect',        
+maxDate: _calendarDepartureInstance.newDate(2017, 11, 2),        
+minDate: _calendarDepartureInstance.newDate(2016, 5, 2),        
+defaultDate: _calendarDepartureInstance.newDate(2016, 5, 2),        
+monthsToShow: 1,        
+dateFormat: 'DD d MM YYYY',        
+changeMonth: false,        
+prevText: '<span class="ui-icon ui-icon-circle-triangle-w"></span>',        
+nextText: '<span class="ui-icon ui-icon-circle-triangle-e"></span>',        
+prevStatus: 'Reculer d&quot;un mois',        
+nextStatus: 'Avancer d&quot;un mois',        
+onSelect: DatePickerDepartureOnSelect
+});
+jQuery(document).ready(function() {
+    if (typeof(_departureDatePickerId) == 'undefined' )
+                _departureDatePickerId = '#V110_C1_DepartureDatePicker';
+    
+SetDepartureDatePickerValue(_calendarDepartureInstance.newDate(2016, 5, 3), '#V110_C1_DepartureDatePicker');
+
+});
+if (_calendarInstance == null)
+    _calendarInstance = GetCalendarLanguage('', 'fr');
+
+_calendarMonths = 2;
+_calendarMaxNights = 31;
+_calendarHiddenButtonId = '#V110_C1_cc_HiddenAsyncButton';
+_calendarResetArrival = jQuery.calendars.newDate(2016,5,2);
+_calendarResetDeparture = jQuery.calendars.newDate(2016,5,3);
+_calendarLosLegendControlId = 'V110_C1_cc_LOSLegendLabel';
+_calendarLosLegendText = 'Le calendrier affiche un tarif par nuitée pour un séjour de {0} nuit(s)';
+jQuery(document).ready( function() {
+    XbeState.hotelGuid = 'd998b764-2975-4a76-9a03-f60dc684f8f6';    XbeState.hotelGroupGuid = '10e4c429-8da1-4e5c-a7d2-a6e920684257';    XbeState.hotelId = 55749;    XbeState.arrivalDate = 635977440000000000;    XbeState.departureDate = 635978304000000000;    XbeState.hotelGroupId = 13518;    XbeState.primaryChannelId = 1;    XbeState.secondaryChannelId = 5;    XbeState.customerUniqueId = '00000000-0000-0000-0000-000000000000';    XbeState.bookerUniqueId = '00000000-0000-0000-0000-000000000000';    XbeState.templateInstanceUniqueId = '745e9e18-562d-4953-8a2f-fb6adefed638';    XbeState.isFilterRequired = false;    XbeState.includeUnassignedRateFilter = false;    XbeState.hideAssignedRatesOnEmptyFilter = false;    XbeState.requestedNewRates = '';    XbeState.userLocationCode = '';    XbeState.requestedRooms = '';    XbeState.calculatePricing = 2;    XbeState.includeTaxesInPricing = false;    XbeState.currencySymbol = '€';    XbeState.showPriceAmount = -1;    XbeState.calendarRate = '';    XbeState.currencyDisplayId = 5;    XbeState.restrictions = 'MINLOS|MAXSTAY|NOARRIVE|NODEPART';    XbeState.losUsedByCalendar = 2;    XbeState.numberOfNights = 1;    XbeState.membershipLevel = '';    XbeState.certificates = '';    XbeState.dayCellStyleSuffix = '';    XbeState.highlightWeekendsAndHolidays = false;    XbeState.weekendDefinition = 0;    XbeState.forceDisplayPricing = false;    XbeState.localCalId = 5832;    if(_CriteriaControlIds == null)
+        SetCriteriaControlIds('V110_C1_QuantitiesCntrl_QuantityTable', 'V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_AdultsDropdown', 'V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_ChildrenDropdown', 'V110_C1_QuantitiesCntrl_RoomsDropdown', 'V110_C1_NightsDropdown', 'V110_C1_CheckAvailFiltersControl_RateFiltersCntrl_RFDropDownList', 'V110_C1_OptionalFieldsCntrl_GrpTB', 'V110_C1_OptionalFieldsCntrl_PromoTB', 'V110_C1_OptionalFieldsCntrl_IataTB', 'V110_C1_CheckAvailFiltersControl_RoomTypeHiddenField', 'V110_C1_CheckAvailFiltersControl_RoomFeatureHiddenField', 'V110_C1_CheckAvailFiltersControl_RatesHiddenField', 'V110_C1_QuantitiesCntrl_RoomsRepeater_ctl00_ChildrenAgesHF', 'V110_C1_OptionalFieldsCntrl_InvalidGroupLabel', 'V110_C1_OptionalFieldsCntrl_InvalidPromoLabel', 'V110_C1_OptionalFieldsCntrl_InvalidIataLabel');});
+jQuery("#V110_C1_cc_CalendarAvailability").calendarsPicker({        
+calendar: _calendarInstance,        
+isHighlightWeekendsAndHolidays: false,        
+weekEndDefinition: 0,        
+renderer: jQuery.extend({}, jQuery.calendars.picker.themeRollerRenderer, { picker: jQuery.calendars.picker.themeRollerRenderer.picker.replace(/\{link:today\}/, '<span class="ui-datepicker-cmd-current">Disponibilité</span>') }),        
+multiSelect: (_calendarMaxNights + 1),        
+altField: '#V110_C1_cc_CalendarAvailability_hiddenField',        
+altFormat: 'dd/mm/YYYY',        
+onDate: SetCalendarDisplay,        
+pickerClass: 'CalSelect',        
+maxDate: _calendarInstance.newDate(2017, 11, 2),        
+minDate: _calendarInstance.newDate(2016, 5, 2),        
+defaultDate: _calendarInstance.newDate(2016, 5, 2),        
+monthsToShow: [1,2],        
+monthsOffset: 1,        
+dateFormat: 'dd/mm/YYYY',        
+changeMonth: false,        
+prevText: '<span class="ui-icon ui-icon-circle-triangle-w"></span>',        
+nextText: '<span class="ui-icon ui-icon-circle-triangle-e"></span>',        
+prevStatus: 'Reculer d&quot;un mois',        
+nextStatus: 'Avancer d&quot;un mois',        
+onSelect: AvailabilityCalendarOnSelect,        
+onChangeMonthYear: AvailabilityCalendarOnChangeMonthYear
+});
+jQuery(document).ready(function() {
+    _availabilityCalendarId = '#V110_C1_cc_CalendarAvailability';
+    if (typeof(_arrivalDatePickerId) == 'undefined' )
+    _arrivalDatePickerId = '#V110_C1_ArrivalDatePicker';
+    if (typeof(_departureDatePickerId) == 'undefined' )
+    _departureDatePickerId = '#V110_C1_DepartureDatePicker';
+    _isCalendarSetOnLoad = true;
+    _drawMonthsInDisplay = [5,6];
+    _minDate = _calendarInstance.newDate(2016, 5, 2);
+    _legendClientId = '#V110_C1_cc_BECalLegend';
+    _totalPriceLabelClientId = '';
+    _totalPriceNumberRoomsLabelClientId = '';
+    AvailabilityCalendarOnChangeMonthYear(2016,5);
+    SetAvailabilityCalendarDates(_availabilityCalendarId, _calendarInstance.newDate(2016, 5, 2), ValidateDepartureDate(_calendarInstance.newDate(2016, 5, 2),_calendarInstance.newDate(2016, 5, 3)));
+    CriteriaSetControls(_calendarInstance.newDate(2016, 5, 2), ValidateDepartureDate(_calendarInstance.newDate(2016, 5, 2), _calendarInstance.newDate(2016, 5, 3)), false);
+    _isOnChangeNummberOfNights = false;
+
+});
+//]]>
+</script>
+</form>
+        
+
+<!-- Begin Business Intelligence tracking code -->
+
+
+
+<!-- End Business Intelligence tracking code -->
+        <div id="dialog-message"></div>
+        <div id="dialog-container"></div>
+         
+    </body>
+</html>
+
+<!-- Processing Time: 1.96340442709897 | Server: 75 | Client IP: 2.22.23.108 | Client User Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/601.5.17 (KHTML, like Gecko) Version/9.1 Safari/601.5.17" | GC Version: 7.8.0.0 -->
