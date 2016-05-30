@@ -1006,7 +1006,8 @@ DropItem.prototype.remove = function(drop) {
         image.style.display = 'block';
 
         // 使用rainyday.js创建模糊&雨滴的窗户效果
-        var engine = new RainyDay(canvas, image, outSize.w, outSize.h, 1, 60);
+		// parameters: canvasid, sourceid, width, height, opacity, blur
+        var engine = new RainyDay(canvas, image, outSize.w, outSize.h, 1, 100);
         engine.gravity = engine.GRAVITY_NON_LINEAR;
         engine.trail = engine.TRAIL_DROPS;
 
