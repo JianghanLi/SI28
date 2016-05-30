@@ -20,10 +20,10 @@ body {
 	height: 100%;
 	opacity: 1;
 	/* blur effect */
-	-webkit-filter: blur(10px); /* Chrome, Opera */
-	-moz-filter: blur(10px);
-	-ms-filter: blur(10px);    
-	filter: blur(10px);
+	-webkit-filter: blur(50px); /* Chrome, Opera */
+	-moz-filter: blur(50px);
+	-ms-filter: blur(50px);    
+	filter: blur(50px);
 	/* opacity effect */
 	-webkit-transition: opacity .5s;
 	-ms-transition: opacity .5s;
