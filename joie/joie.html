@@ -95,8 +95,10 @@ dd++
 }
 }
 }
-if(dd/(imgData.width*imgData.height/(jiange*jiange))<0.4){
-canvas.className = "noOp";
+if(dd/(imgData.width*imgData.height/(jiange*jiange))<0.9){
+	canvas.className = "noOp";
+	setTimeout("javascript: window.location.href='conclusion.html';", 5000)
+	
 }
 },totimes)
 });

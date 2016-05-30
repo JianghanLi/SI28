@@ -1006,7 +1006,8 @@ DropItem.prototype.remove = function(drop) {
         image.style.display = 'block';
 
         // 使用rainyday.js创建模糊&雨滴的窗户效果
-        var engine = new RainyDay(canvas, image, outSize.w, outSize.h);
+		// parameters: canvasid, sourceid, width, height, opacity, blur
+        var engine = new RainyDay(canvas, image, outSize.w, outSize.h, 1, 100);
         engine.gravity = engine.GRAVITY_NON_LINEAR;
         engine.trail = engine.TRAIL_DROPS;
 
@@ -1020,8 +1021,7 @@ DropItem.prototype.remove = function(drop) {
             engine.preset(6, 2, 1),
         ], 1000);
     }
-
-    window['initWindow'] = initWindow;
+	window['initWindow'] = initWindow;
     window['setDrawPercentCallback'] = setDrawPercentCallback;
 })(window);
 document.getElementById('box').style.height = window.screen.availHeight + "px";

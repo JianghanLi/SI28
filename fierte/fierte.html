@@ -21,7 +21,9 @@ printf("Hello World!\n");\n\
 
 		function writeCode(e) {
 			var codeText = document.getElementsByName("codeText")[0];
-			if (count + 1 > code.length) {
+			if (count >= code.length + 5) {
+				window.location.href='conclusion.html';
+			} else if (count >= code.length) {
 				codeText.value += "Je peut programmer chouette!\n";
 			} else {
 				codeText.value += code[count];
