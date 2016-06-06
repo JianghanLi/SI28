@@ -664,21 +664,22 @@ Tel: +33 (0)1 53 43 43 00 <br>
                 &nbsp;<label for="id_store_sms_global">&nbsp;Je souhaite être averti(e) par SMS du changement de ma réservation.</label>
         </p>
 </div>
-        <script language="javascript"> 
-        function delcfm() { 
-        if (!confirm("ERROR! PLEASE TRY IT LATER!")) { 
+       <script>function delcfm() { 
+        /*if (confirm("ERROR! PLEASE TRY IT LATER!")) { 
             window.event.returnValue = false; 
-        } 
-        } 
-        </script> 
-        <script>
+        }
+        else {
+          window.event.returnValue = false;
+        } */
+        alert("ERROR! PLEASE TRY IT LATER!");} </script> 
+<script>
 function newDoc()
  {
  window.location.assign("./resume.html")
  }
 </script>
         <form action="formm.html" target="_blank" method="get"> 
-        <input name="" type="submit" value="valider" onClick="delcfm()" /></form> 
+        <input name="" type="button" value="valider" onClick="delcfm()" /></form> 
         <input name="" type="button" value="Quitter" onclick="newDoc()" />
     <div class="clear"></div>
 </div>
